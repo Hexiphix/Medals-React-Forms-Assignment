@@ -3,17 +3,42 @@ body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.topBanner {
+  width: 100%;
+  margin: 0;
+  opacity: .95;
+  z-index: 1000;
+  position: fixed;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 8px;
+  background-color: #a368a3;
+  top: 0;
+}
+
+.topBannerText{
+  font-size: 2.0em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.adjustLeft{
+  padding-right: 8px;
+}
+
 .paperBounds {
-  width: 280px;
-  padding: 10px;
+  width: 300px;
+  padding: 18px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.countryNameTop{
+  text-align: center;
+}
+  
 .countryName {
   font-size: 1.8em;
-  text-align: center;
 }
 
 div .dividerScale {
@@ -31,14 +56,25 @@ div .dividerScale {
 
 div .countDiv {
   color: black;
-  background-color: #ffc107;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.goldMedalText {
-  width: 145px;
+div .goldCountDiv {
+  background-color: #ffc107;
+}
+
+div .silverCountDiv {
+  background-color: #c4cacc;
+}
+
+div .bronzeCountDiv {
+  background-color: #cd7f32;
+}
+
+.medalText {
+  width: 165px;
   font-size: 1.4em;
-  padding-left: 5px;
+  padding-left: 10px;
 } 
 
 div .incdecButtonClass {
