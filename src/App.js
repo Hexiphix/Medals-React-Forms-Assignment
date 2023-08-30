@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Country from './components/Country';
-import { Badge, Container, Grid } from '@mui/material';
+import { Badge, Box, Fab, Grid } from '@mui/material';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import NewCountry from './components/NewCountry';
 
 class App extends Component {
   state = {
+    showNewCountryForm: false,
     countries: [
       { id: 1, name: 'United States', medals: [
         {medalName: 'gold', count: 2}, 
@@ -71,16 +74,40 @@ class App extends Component {
     return countriesMutable.reduce((a, b) => a + b.medals.reduce((a, b) => a + b.count, 0), 0);
   }
 
+  toggleNewCountryForm = () => {
+    const { showNewCountryForm } = this.state;
+    this.setState({ showNewCountryForm : !showNewCountryForm });
+  }
+
+  handleDelete = (countryId) => {
+    const countries = this.state.countries.filter(c => c.id !== countryId);
+    this.setState({ countries:countries });
+  }
+
+  handleAdd = (country) => {
+    const { countries } = this.state;
+    const id = countries.length === 0 ? 1 : Math.max(...countries.map(country => country.id)) + 1;
+    const mutableCountries = countries.concat(
+      { id: id, name: country, medals: [
+        {medalName: 'gold', count: 0}, 
+        {medalName: 'silver', count: 0}, 
+        {medalName: 'bronze', count: 0}] });
+    this.setState({ countries:mutableCountries });
+  }
+
   render() { 
     return ( 
       <div className="App">
         <div className='topBanner'>
           <Badge className='topBannerText' color='primary' badgeContent={ this.getTotalMedalCount() }>
-            <div className='adjustLeft'>Olympic Medals</div>
+            <div className='adjustBadge'>Olympic Medals</div>
           </Badge>
         </div>
-        <Container fixed maxWidth="lg" sx={{paddingTop: 8.75, paddingBottom: 2.5}}>
-          <Grid container spacing={2} justifyContent="center">
+        <Box sx={{paddingTop: 8.75, paddingBottom: 2.5, paddingRight: 9, paddingLeft: 9}}>
+          <Fab size='medium' color='primary' onClick={ this.toggleNewCountryForm } sx={{position: 'fixed', bottom: 14, right: 14}}>
+            <AddRoundedIcon />
+          </Fab>
+          <Grid container spacing={2} justifyContent="center" alignItems={'center'}>
             { this.state.countries.map(country => 
               <Grid item key={country.id}>
                   <Country 
@@ -88,11 +115,16 @@ class App extends Component {
                     country={ country }
                     getMedalCount={ this.getCountryMedalCount }
                     onIncrement={ this.incrementMedal }
-                    onDecrement={ this.decrementMedal } />
+                    onDecrement={ this.decrementMedal }
+                    onDelete={ this.handleDelete } />
               </Grid>
             )}
           </Grid>
-        </Container>
+        </Box>
+        <NewCountry
+          showForm={ this.state.showNewCountryForm }
+          toggleNewCountryForm={ this.toggleNewCountryForm }
+          onAdd={ this.handleAdd } />
       </div>
      );
   }

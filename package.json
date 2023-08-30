@@ -1,7 +1,7 @@
 {
   "name": "assignment-medals-react-basic-concepts",
   "version": "0.1.0",
-  "homepage": "https://Hexiphix.github.io/Adv-Web-Ser-Dev-React-Lab-1",
+  "homepage": "https://Hexiphix.github.io/Medals-React-Forms-Assignment",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",

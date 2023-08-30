@@ -21,8 +21,8 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.adjustLeft{
-  padding-right: 8px;
+.adjustBadge{
+  padding: 0px 8px;
 }
 
 .paperBounds {
