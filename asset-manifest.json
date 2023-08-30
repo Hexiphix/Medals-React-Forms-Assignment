@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Medals-React-Forms-Assignment/static/css/main.c9068197.css",
+    "main.js": "/Medals-React-Forms-Assignment/static/js/main.7ada998f.js",
+    "static/js/787.4d6ab9fd.chunk.js": "/Medals-React-Forms-Assignment/static/js/787.4d6ab9fd.chunk.js",
+    "index.html": "/Medals-React-Forms-Assignment/index.html",
+    "main.c9068197.css.map": "/Medals-React-Forms-Assignment/static/css/main.c9068197.css.map",
+    "main.7ada998f.js.map": "/Medals-React-Forms-Assignment/static/js/main.7ada998f.js.map",
+    "787.4d6ab9fd.chunk.js.map": "/Medals-React-Forms-Assignment/static/js/787.4d6ab9fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9068197.css",
+    "static/js/main.7ada998f.js"
+  ]
+}
